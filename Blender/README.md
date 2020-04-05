@@ -8,6 +8,7 @@ Extract to io_import_FF7R
 
 
 Place io_import_FF7R folder in:
+
 Windows
 --------
 %USERPROFILE%\AppData\Roaming\Blender Foundation\Blender\2.82\scripts\addons\
