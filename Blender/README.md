@@ -17,15 +17,20 @@ macOS
 --------
 USER
     /Users/$USER/Library/Application Support/Blender/2.82/scripts/addons
+    
 SYSTEM
+
     /Library/Application Support/Blender/2.82/scripts/addons
 
 
 Linux
 --------
 USER
+
     $HOME/.config/blender/2.82/scripts/addons
+
 SYSTEM
+
     /usr/share/blender/2.82/scripts/addons
 
 
