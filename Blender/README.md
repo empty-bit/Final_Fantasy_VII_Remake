@@ -1,7 +1,9 @@
 #Blender Importer
 
 Download Gildor's UE Viewer to dump textures:
+
 https://www.gildor.org/en/projects/umodel#files
+
 Extract to io_import_FF7R
 
 
