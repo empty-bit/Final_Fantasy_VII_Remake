@@ -1,1 +1,1 @@
-#Softimage Plugin
+Slow, incomplete, and half-baked
