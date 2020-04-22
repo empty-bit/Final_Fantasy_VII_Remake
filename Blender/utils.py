@@ -163,7 +163,7 @@ def getMaterialTypes(f_list):
 		tname = t[:tl]
 		temp.add(tname)
 	for m in matFiles:
-		textures = set()
+		textures = {}
 		fname = m[:-7]
 		fpath = f_list.data['mat_dir'] + m
 		fileH = open(fpath, 'rb')
@@ -172,11 +172,13 @@ def getMaterialTypes(f_list):
 		for j in theNames:
 			if j in temp:
 				if j[-2:] == '_A':
-					textures.add(j)
+					textures['A'] = j
 				elif j[-2:] == '_C':
-					textures.add(j)
+					textures['C'] = j
 				elif j[-2:] == '_N':
-					textures.add(j)
+					textures['N'] = j
+				elif j[-2:] == '_O':
+					textures['O'] = j
 		textureData[fname] = textures
 	return textureData
 

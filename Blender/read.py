@@ -129,13 +129,13 @@ def readFile(filepath, dump_textures):
 		boneName = joint_data[k]["name"]
 		BNparent = joint_data[k]["parent"]
 		
-		BNrt = (-m1[3], m1[0], m1[1], m1[2])
+		BNrt = (m1[3], -m1[0], m1[1], m1[2])
 		rt = quat2mat(BNrt)
 		bnXM = np.matrix(
 					[[rt[0][0], rt[0][1], rt[0][2], 0], \
 					[ rt[1][0], rt[1][1], rt[1][2], 0], \
 					[ rt[2][0], rt[2][1], rt[2][2], 0], \
-					[    m1[4],    m1[5],    m1[6], 1]]
+					[    -m1[4],    m1[5],    m1[6], 1]]
 					)
 		
 		
@@ -257,6 +257,8 @@ def readFile(filepath, dump_textures):
 	byteCount = vCount * vStride
 	vi = np.fromfile(md, dtype = 'B', count = byteCount).reshape((vCount, vStride))
 	pos = vi[:,8:20].ravel().view(dtype = '<f').reshape((vCount, 3))
+	#pos[:,[0,2]] = pos[:,[2,0]]
+	pos[:,[0,0]] *= -1
 	vertexArray = pos.tolist()
 	
 	if uv_count > 0:
